@@ -41,15 +41,15 @@ public class BabysitterTest {
         assertEquals(false, testObject.arrivalTime(4));
     }
 
-    //test to show end time is after 5pm
+    //test to show end time is after start time
     @Test
     public void returnTrueIfConvertedTimeForEndingShiftIsAfter5PM() {
-        assertEquals(true, testObject.midnightShift(7));
+        assertEquals(true, testObject.endTime(5,7));
     }
 
     @Test
     public void returnFalseIfConvertedTimeForEndingShiftIsAt5PM() {
-        assertEquals(false, testObject.midnightShift(5));
+        assertEquals(false, testObject.endTime(8, 5));
     }
 
     //Test if bed time is between 5pm and 4 AM

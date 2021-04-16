@@ -19,8 +19,8 @@ public class Babysitter {
         return convertTime(regularShift) < 11;
     }
 
-    public boolean midnightShift(int ends) {
-        return convertTime(ends) > 0;
+    public boolean endTime (int start, int ends) {
+        return convertTime(ends) > convertTime(start);
     }
 
     public boolean estimatedBedTime(int regularShift, int bedTime, int ends) {
@@ -52,9 +52,9 @@ public class Babysitter {
                 : 0;
     }
 
-    public int calculatedTotalPay(int regularShift, int bedTime, int midnightShift) {
-        return (regularShiftHours(regularShift,bedTime)* regularRate)
-                + (bedTimeShiftHours(regularShift,bedTime) * bedTimeRate)
-                + (midnightShiftHours(midnightShift)* midnightRate);
+    public int calculatedTotalPay(int start, int bedTime, int midnight) {
+        return (regularShiftHours(start,bedTime)* regularRate)
+                + (bedTimeShiftHours(start,bedTime) * bedTimeRate)
+                + (midnightShiftHours(midnight)* midnightRate);
     }
 }
