@@ -2,12 +2,9 @@ package KataTest;
 
 import KataProject.Babysitter;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class BabysitterTest {
 
@@ -44,7 +41,7 @@ public class BabysitterTest {
     //test to show end time is after start time
     @Test
     public void returnTrueIfConvertedTimeForEndingShiftIsAfter5PM() {
-        assertEquals(true, testObject.endTime(5,7));
+        assertEquals(true, testObject.endTime(5, 7));
     }
 
     @Test
@@ -90,28 +87,27 @@ public class BabysitterTest {
     //Test to calculate bedtime rate
 
     @Test
-    public void return3BedTimeShiftHours(){
-        assertEquals(3, testObject.bedTimeShiftHours(5,9));
+    public void return3BedTimeShiftHours() {
+        assertEquals(3, testObject.bedTimeShiftHours(5, 9));
     }
 
     @Test
-    public void return0BedTimeShiftHoursDueToExceedingMidnight(){
-        assertEquals(0, testObject.bedTimeShiftHours(1,2));
+    public void return0BedTimeShiftHoursDueToExceedingMidnight() {
+        assertEquals(0, testObject.bedTimeShiftHours(1, 2));
     }
 
     //Test Calculated Rate of hours
 
 
     @Test
-    public void calculateTotalPayOfAllThreeShifts(){
-        assertEquals(136, testObject.calculatedTotalPay(5,9,4));
+    public void calculateTotalPayOfAllThreeShifts() {
+        assertEquals(136, testObject.calculatedTotalPay(5, 9, 4));
     }
 
     @Test
-    public void calculateTotalPayOfRegularAndMidnightshift(){
-        assertEquals(52, testObject.calculatedTotalPay(1,2,4));
+    public void calculateTotalPayOfRegularAndMidnightshift() {
+        assertEquals(52, testObject.calculatedTotalPay(1, 2, 4));
     }
-
 
 
 }
