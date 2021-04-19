@@ -53,9 +53,10 @@ public class Babysitter {
                 : 0;
     }
 
-    public int calculatedTotalPay(int start, int bedTime, int midnight) {
+    public int calculatedTotalPay(int start, int bedTime, int end) {
+
         return (regularShiftHours(start, bedTime) * regularRate)
                 + (bedTimeShiftHours(start, bedTime) * bedTimeRate)
-                + (midnightShiftHours(midnight) * midnightRate);
+                + (midnightShiftHours(end) * midnightRate);
     }
 }
